@@ -76,9 +76,47 @@ void logic_operators_test(){
     MyString myString_2 = MyString("Tamar");
     MyString myString_3 = MyString("Sara");
     MyString myString_4 = MyString("Rivka");
-    cout<<"myString_1 == myString_2 : "<<(myString_1==myString_2)<<endl;
-    cout<<"myString_1 == myString_3 : "<<(myString_1==myString_3)<<endl;
-    cout<<"myString_1 <= myString_2 : "<<(myString_1<=myString_2)<<endl;
-    cout<<"myString_1 > myString_3 : "<<(myString_1>myString_3)<<endl;
+
+
+    //----------------- == -------------------
+
+    cout<<myString_1.c_str()<< " == "<< myString_2.c_str()<<" : "<<(myString_1==myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " == "<< myString_3.c_str()<<" : "<<(myString_1==myString_3)<<endl;
+
+    //----------------- != -------------------
+
+    cout<<myString_1.c_str()<< " != "<< myString_2.c_str()<<" : "<<(myString_1!=myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " != "<< myString_3.c_str()<<" : "<<(myString_1!=myString_3)<<endl;
+
+    //----------------- <= -------------------
+
+
+    cout<<myString_1.c_str()<< " <= "<< myString_2.c_str()<<" : "<<(myString_1<=myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " <= "<< myString_3.c_str()<<" : "<<(myString_1<=myString_3)<<endl;
+
+    cout<<myString_1.c_str()<< " < "<< myString_2.c_str()<<" : "<<(myString_1<myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " < "<< myString_3.c_str()<<" : "<<(myString_1<myString_3)<<endl;
+
+    cout<<myString_3.c_str()<< " < "<< myString_1.c_str()<<" : "<<(myString_3<myString_1)<<endl;
+
+
+    cout<<myString_1.c_str()<< " > "<< myString_2.c_str()<<" : "<<(myString_1>myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " > "<< myString_3.c_str()<<" : "<<(myString_1>myString_3)<<endl;
+
+
+    cout<<myString_3.c_str()<< " >"<< myString_1.c_str()<<" : "<<(myString_3>myString_1)<<endl;
+
+
+    cout<<myString_1.c_str()<< " >= "<< myString_2.c_str()<<" : "<<(myString_1>=myString_2)<<endl;
+
+    cout<<myString_1.c_str()<< " >= "<< myString_3.c_str()<<" : "<<(myString_1>=myString_3)<<endl;
+
+
+    cout<<myString_3.c_str()<< " >="<< myString_1.c_str()<<" : "<<(myString_3>=myString_1)<<endl;
 
 }

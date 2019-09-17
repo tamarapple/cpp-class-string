@@ -29,17 +29,17 @@ public:
 
     MyString & operator+=(const MyString &myString);
 
+    bool operator==(const MyString &myString);
 
-    friend bool operator==(const MyString &, const MyString &myString);
+    bool operator!=(const MyString &myString);
 
-    friend bool operator<=(const MyString &, const MyString &myString);
+    bool operator<=(const MyString &myString);
 
-    friend bool operator<(const MyString &, const MyString &myString);
+    bool operator<(const MyString &myString);
 
-    friend bool operator>(const MyString &, const MyString &myString);
+    bool operator>(const MyString &myString);
 
-    friend bool operator>=(const MyString &, const MyString &myString);
-
+    bool operator>=(const MyString &myString);
 
     friend ostream &operator<<(ostream &, const MyString &myString);
 

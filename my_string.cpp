@@ -7,7 +7,6 @@
 #include <assert.h>
 
 MyString::MyString(const char *myString) {
-
     if (myString) {
         //if (m_buffer) {
         //  delete[] m_buffer;
@@ -32,8 +31,8 @@ MyString::MyString(const MyString &myString) {
     //}
     m_size = myString.m_size;
 
-    m_buffer = new char[m_size];
-    strncpy(m_buffer, myString.m_buffer, m_size);
+    m_buffer = new char[m_size+1];
+    strncpy(m_buffer, myString.m_buffer, m_size+1);
 
 
 }
@@ -55,7 +54,7 @@ size_t MyString::length() {
     if (!m_buffer) {
         return 0;
     } else {
-        return strlen(m_buffer);
+        return m_size;
     }
 }
 
@@ -92,36 +91,39 @@ MyString &MyString::operator+=(const MyString &myString) {
     return *this;
 }
 
-
-bool operator==(const MyString &myString_1, const MyString &myString_2) {
-    return (!(strcmp(myString_1.m_buffer, myString_2.m_buffer)));
+bool MyString::operator==(const MyString &myString){
+    return (!(strcmp(m_buffer, myString.m_buffer)));
 }
 
-bool operator<=(const MyString &myString_1, const MyString &myString_2) {
+bool MyString::operator!=(const MyString &myString){
+    return (!this->operator==(myString));
+}
+
+bool MyString::operator<=(const MyString &myString){
     int strcmp_ans;
-    strcmp_ans = strcmp(myString_1.m_buffer, myString_2.m_buffer);
-    if (strcmp_ans <= 1)
+    strcmp_ans = strcmp(m_buffer, myString.m_buffer);
+    if (strcmp_ans < 1)
         return true;
     else
         return false;
 }
 
-bool operator<(const MyString &myString_1, const MyString &myString_2) {
+bool MyString::operator<(const MyString &myString){
     int strcmp_ans;
-    strcmp_ans = strcmp(myString_1.m_buffer, myString_2.m_buffer);
+    strcmp_ans = strcmp(m_buffer, myString.m_buffer);
     if (strcmp_ans < 0)
         return true;
     else
         return false;
-
 }
 
-bool operator>(const MyString &myString_1, const MyString &myString_2) {
-    return !operator<=(myString_1, myString_2);
+bool MyString::operator>(const MyString &myString){
+    return !(this->operator<=(myString));
 }
 
-bool operator>=(const MyString &myString_1, const MyString &myString_2) {
-    return !operator<(myString_1, myString_2);
+bool MyString::operator>=(const MyString &myString){
+    return !(this->operator<(myString));
+
 }
 
 ostream &operator<<(ostream &os, const MyString &myString) {
