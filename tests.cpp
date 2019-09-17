@@ -53,14 +53,14 @@ void operetors_test() {
         cout << "myString_3: " << myString_3 << endl;
         cout << "myString_4: " << myString_4 << endl;
 
-        myString_4= myString_4;
+        myString_4 = myString_4;
 
         cout << "myString_4: " << myString_4 << endl;
 
         //********   operator+= **********//
 
-        MyString myString_5= MyString("Mr Google");
-        myString_5+=myString_4+=myString_5;
+        MyString myString_5 = MyString("Mr Google");
+        myString_5 += myString_4 += myString_5;
         cout << "myString_4: " << myString_4 << endl;
         cout << "myString_5: " << myString_5 << endl;
 
@@ -71,7 +71,7 @@ void operetors_test() {
 
 }
 
-void logic_operators_test(){
+void logic_operators_test() {
     MyString myString_1 = MyString("Tamar");
     MyString myString_2 = MyString("Tamar");
     MyString myString_3 = MyString("Sara");
@@ -80,43 +80,99 @@ void logic_operators_test(){
 
     //----------------- == -------------------
 
-    cout<<myString_1.c_str()<< " == "<< myString_2.c_str()<<" : "<<(myString_1==myString_2)<<endl;
+    cout << myString_1.c_str() << " == " << myString_2.c_str() << " : " << (myString_1 == myString_2) << endl;
 
-    cout<<myString_1.c_str()<< " == "<< myString_3.c_str()<<" : "<<(myString_1==myString_3)<<endl;
+    cout << myString_1.c_str() << " == " << myString_3.c_str() << " : " << (myString_1 == myString_3) << endl;
 
     //----------------- != -------------------
 
-    cout<<myString_1.c_str()<< " != "<< myString_2.c_str()<<" : "<<(myString_1!=myString_2)<<endl;
+    cout << myString_1 << " != " << myString_2 << " : " << (myString_1 != myString_2) << endl;
 
-    cout<<myString_1.c_str()<< " != "<< myString_3.c_str()<<" : "<<(myString_1!=myString_3)<<endl;
+    cout << myString_1 << " != " << myString_3 << " : " << (myString_1 != myString_3) << endl;
 
     //----------------- <= -------------------
 
 
-    cout<<myString_1.c_str()<< " <= "<< myString_2.c_str()<<" : "<<(myString_1<=myString_2)<<endl;
+    cout << myString_1 << " <= " << myString_2 << " : " << (myString_1 <= myString_2) << endl;
 
-    cout<<myString_1.c_str()<< " <= "<< myString_3.c_str()<<" : "<<(myString_1<=myString_3)<<endl;
+    cout << myString_1 << " <= " << myString_3 << " : " << (myString_1 <= myString_3) << endl;
 
-    cout<<myString_1.c_str()<< " < "<< myString_2.c_str()<<" : "<<(myString_1<myString_2)<<endl;
+    //----------------- < ------------------
 
-    cout<<myString_1.c_str()<< " < "<< myString_3.c_str()<<" : "<<(myString_1<myString_3)<<endl;
+    cout << myString_1 << " < " << myString_2 << " : " << (myString_1 < myString_2) << endl;
 
-    cout<<myString_3.c_str()<< " < "<< myString_1.c_str()<<" : "<<(myString_3<myString_1)<<endl;
+    cout << myString_1 << " < " << myString_3 << " : " << (myString_1 < myString_3) << endl;
 
-
-    cout<<myString_1.c_str()<< " > "<< myString_2.c_str()<<" : "<<(myString_1>myString_2)<<endl;
-
-    cout<<myString_1.c_str()<< " > "<< myString_3.c_str()<<" : "<<(myString_1>myString_3)<<endl;
+    cout << myString_3 << " < " << myString_1 << " : " << (myString_3 < myString_1) << endl;
 
 
-    cout<<myString_3.c_str()<< " >"<< myString_1.c_str()<<" : "<<(myString_3>myString_1)<<endl;
+    //----------------- > ------------------
+    cout << myString_1<< " > " << myString_2 << " : " << (myString_1 > myString_2) << endl;
+
+    cout << myString_1 << " > " << myString_3<< " : " << (myString_1 > myString_3) << endl;
+
+    cout << myString_3 << " >" << myString_1 << " : " << (myString_3 > myString_1) << endl;
+
+    //----------------- >= ------------------
+
+    cout << myString_1.c_str() << " >= " << myString_2<< " : " << (myString_1 >= myString_2) << endl;
+
+    cout << myString_1.c_str() << " >= " << myString_3 << " : " << (myString_1 >= myString_3) << endl;
+
+    cout << myString_3.c_str() << " >=" << myString_1 << " : " << (myString_3 >= myString_1) << endl;
+
+}
 
 
-    cout<<myString_1.c_str()<< " >= "<< myString_2.c_str()<<" : "<<(myString_1>=myString_2)<<endl;
+void friend_operators_test() {
+    MyString myString_1 = MyString("Tamar");
+    MyString myString_2 = MyString("Sara");
+    MyString myString_3 = MyString("Rivka");
+    const char *string_char_1 = "Tamar";
+    const char *string_char_2 = "Rachel";
+    const char *string_char_3 = "Lea";
 
-    cout<<myString_1.c_str()<< " >= "<< myString_3.c_str()<<" : "<<(myString_1>=myString_3)<<endl;
+    //----------------- == -------------------
+
+    cout << string_char_1 << " == " << myString_1 << " : " << (string_char_1 == myString_1) << endl;
+
+    cout << string_char_1 << " == " << myString_3 << " : " << (string_char_1 == myString_3) << endl;
+
+    //----------------- != -------------------
+
+    cout << string_char_1 << " != " << myString_1 << " : " << (string_char_1 != myString_1) << endl;
+
+    cout << string_char_2 << " != " << myString_3 << " : " << (string_char_2 != myString_3) << endl;
+
+    //----------------- <= -------------------
 
 
-    cout<<myString_3.c_str()<< " >="<< myString_1.c_str()<<" : "<<(myString_3>=myString_1)<<endl;
+    cout << string_char_3 << " <= " << myString_1 << " : " << (string_char_3 <= myString_1) << endl;
+
+    cout << string_char_1 << " <= " << myString_3 << " : " << (string_char_1 <= myString_3) << endl;
+
+    //----------------- < ------------------
+
+    cout << string_char_1 << " < " << myString_2 << " : " << (string_char_1 < myString_1) << endl;
+
+    cout << string_char_2 << " < " << myString_3 << " : " << (string_char_2 < myString_3) << endl;
+
+    cout << string_char_3 << " < " << myString_1 << " : " << (string_char_3 < myString_1) << endl;
+
+
+    //----------------- > ------------------
+    cout << string_char_1 << " > " << myString_1 << " : " << (string_char_1 > myString_1) << endl;
+
+    cout << string_char_1 << " > " << myString_3 << " : " << (string_char_1 > myString_3) << endl;
+
+    cout << string_char_1 << " >" << myString_1 << " : " << (string_char_1 > myString_1) << endl;
+
+    //----------------- >= ------------------
+
+    cout << string_char_1 << " >= " << myString_2 << " : " << (string_char_1 >= myString_2) << endl;
+
+    cout << string_char_1 << " >= " << myString_3 << " : " << (string_char_1 >= myString_3) << endl;
+
+    cout << string_char_3 << " >=" << myString_1 << " : " << (string_char_3 >= myString_1) << endl;
 
 }

@@ -126,6 +126,30 @@ bool MyString::operator>=(const MyString &myString){
 
 }
 
+bool operator==(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator==(myString_2);
+}
+
+bool operator!=(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator!=(myString_2);
+}
+
+bool operator<=(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator<=(myString_2);
+}
+
+bool operator<(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator<(myString_2);
+}
+
+bool operator>(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator>(myString_2);
+}
+
+bool operator>=(const char * string_1 ,const MyString &myString_2){
+    return MyString(string_1).operator>=(myString_2);
+}
+
 ostream &operator<<(ostream &os, const MyString &myString) {
     for (size_t i = 0; i < myString.m_size; i++) {
         os << myString.m_buffer[i];

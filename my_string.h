@@ -41,6 +41,18 @@ public:
 
     bool operator>=(const MyString &myString);
 
+    friend bool operator==(const char * string_1 ,const MyString &myString_2);
+
+    friend bool operator!=(const char * string_1 ,const MyString &myString_2);
+
+    friend bool operator<=(const char * string_1 ,const MyString &myString_2);
+
+    friend bool operator<(const char * string_1 ,const MyString &myString_2);
+
+    friend bool operator>(const char * string_1 ,const MyString &myString_2);
+
+    friend bool operator>=(const char * string_1 ,const MyString &myString_2);
+
     friend ostream &operator<<(ostream &, const MyString &myString);
 
 private:
