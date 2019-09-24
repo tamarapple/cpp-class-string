@@ -9,5 +9,5 @@
 void constructor_test();
 void operetors_test();
 void logic_operators_test();
-void friend_operators_test();
+void logic_operators_with_char_test();
 #endif /* MYSTRING_C___TESTS_H */

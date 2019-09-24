@@ -59,14 +59,14 @@ void operetors_test() {
 
         //********   operator+= **********//
 
-        /*MyString myString_5 = MyString("Mr Google");
+       /* MyString myString_5 = MyString("Mr Google");
         myString_5 += myString_4 += myString_5;
         cout << "myString_4: " << myString_4 << endl;
         cout << "myString_5: " << myString_5 << endl;*/
 
-        cout << "myString_1: " << myString_1 << endl;
-        myString_1 = MyString("Mr Google");
-        cout << "myString_1: " << myString_1 << endl;
+        //cout << "myString_1: " << myString_1 << endl;
+        //myString_1 = MyString("Mr Google");
+        //cout << "myString_1: " << myString_1 << endl;
         //myString_5 += myString_4 += myString_5;
         //cout << "myString_4: " << myString_4 << endl;
         //cout << "myString_5: " << myString_5 << endl;
@@ -131,7 +131,7 @@ void logic_operators_test() {
 }
 
 
-void friend_operators_test() {
+void logic_operators_with_char_test() {
     MyString myString_1 = MyString("Tamar");
     MyString myString_2 = MyString("Sara");
     MyString myString_3 = MyString("Rivka");

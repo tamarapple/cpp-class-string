@@ -39,8 +39,80 @@ private:
 
 };
 
+inline MyString::MyString(const char *myString) {
+    if (myString) {
+        m_size = strlen(myString);
+        //+1 for \0
+        size_t len = strlen(myString) + 1;
+        m_buffer = new char[len];
+        strncpy(m_buffer, myString, len);
+    } else {
+        m_buffer = NULL;
+        m_size = 0;
+    }
+}
+
+inline MyString::MyString(const MyString &myString) {
+    m_size = myString.m_size;
+    m_buffer = new char[m_size+1];
+    strncpy(m_buffer, myString.m_buffer, m_size+1);
+}
+
+inline MyString::~MyString() {
+    delete[] m_buffer;
+    m_buffer = NULL;
+}
+
+inline size_t MyString::length() {
+    if (!m_buffer) {
+        return 0;
+    } else {
+        return m_size;
+    }
+}
+
 inline const char *MyString::c_str() const {
     return m_buffer;
+}
+
+inline char &MyString::operator[](size_t index) {
+    if (index < this->m_size) {
+        return m_buffer[index];
+    } else
+        throw "invalid index";
+}
+
+
+inline MyString &MyString::operator=(const MyString &myString) {
+
+    if (this != &myString && myString.m_buffer) {
+        if (this->m_buffer)
+            delete[] m_buffer;
+
+        m_size = myString.m_size;
+
+        m_buffer = new char[m_size];
+        strncpy(m_buffer, myString.m_buffer, m_size);
+    }
+    return *this;
+}
+
+
+
+inline MyString &MyString::operator+=(const MyString &myString) {
+    if (myString.m_buffer && m_buffer) {
+        strcat(m_buffer, myString.m_buffer);
+        m_size = m_size + myString.m_size;
+    }
+    return *this;
+}
+
+
+inline ostream &operator<<(ostream &os, const MyString &myString) {
+    if(myString.m_buffer) {
+        os << myString.m_buffer;
+    }
+    return os;
 }
 
 inline bool operator==(const MyString &myString_1, const MyString &myString_2) {
