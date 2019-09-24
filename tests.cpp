@@ -59,10 +59,17 @@ void operetors_test() {
 
         //********   operator+= **********//
 
-        MyString myString_5 = MyString("Mr Google");
+        /*MyString myString_5 = MyString("Mr Google");
         myString_5 += myString_4 += myString_5;
         cout << "myString_4: " << myString_4 << endl;
-        cout << "myString_5: " << myString_5 << endl;
+        cout << "myString_5: " << myString_5 << endl;*/
+
+        cout << "myString_1: " << myString_1 << endl;
+        myString_1 = MyString("Mr Google");
+        cout << "myString_1: " << myString_1 << endl;
+        //myString_5 += myString_4 += myString_5;
+        //cout << "myString_4: " << myString_4 << endl;
+        //cout << "myString_5: " << myString_5 << endl;
 
     }
     catch (const char *msg) {

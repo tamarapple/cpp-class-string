@@ -13,6 +13,7 @@ MyString::MyString(const char *myString) {
         //m_buffer = NULL;
         //}
         m_size = strlen(myString);
+        //+1 for \0
         size_t len = strlen(myString) + 1;
         m_buffer = new char[len];
         strncpy(m_buffer, myString, len);
@@ -39,15 +40,9 @@ MyString::MyString(const MyString &myString) {
 
 
 MyString::~MyString() {
-    if (m_buffer)
-        delete[] m_buffer;
+    delete[] m_buffer;
     m_buffer = NULL;
 }
-
-const char *MyString::c_str() {
-    return m_buffer;
-}
-
 
 
 size_t MyString::length() {
@@ -91,68 +86,8 @@ MyString &MyString::operator+=(const MyString &myString) {
     return *this;
 }
 
-bool MyString::operator==(const MyString &myString){
-    return (!(strcmp(m_buffer, myString.m_buffer)));
-}
-
-bool MyString::operator!=(const MyString &myString){
-    return (!this->operator==(myString));
-}
-
-bool MyString::operator<=(const MyString &myString){
-    int strcmp_ans;
-    strcmp_ans = strcmp(m_buffer, myString.m_buffer);
-    if (strcmp_ans < 1)
-        return true;
-    else
-        return false;
-}
-
-bool MyString::operator<(const MyString &myString){
-    int strcmp_ans;
-    strcmp_ans = strcmp(m_buffer, myString.m_buffer);
-    if (strcmp_ans < 0)
-        return true;
-    else
-        return false;
-}
-
-bool MyString::operator>(const MyString &myString){
-    return !(this->operator<=(myString));
-}
-
-bool MyString::operator>=(const MyString &myString){
-    return !(this->operator<(myString));
-
-}
-
-bool operator==(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator==(myString_2);
-}
-
-bool operator!=(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator!=(myString_2);
-}
-
-bool operator<=(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator<=(myString_2);
-}
-
-bool operator<(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator<(myString_2);
-}
-
-bool operator>(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator>(myString_2);
-}
-
-bool operator>=(const char * string_1 ,const MyString &myString_2){
-    return MyString(string_1).operator>=(myString_2);
-}
 
 ostream &operator<<(ostream &os, const MyString &myString) {
-    for (size_t i = 0; i < myString.m_size; i++) {
-        os << myString.m_buffer[i];
-    }
+    os<<myString.c_str();
     return os;
 }
